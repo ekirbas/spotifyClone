@@ -1,0 +1,233 @@
+/*  //--- header kısmında 300px lik arka plan olarak ayarlamaya çalıştım scrollbar altında kaldı
+    .headerTransparanAbsolute{
+    position: absolute;
+    top: 0;
+    background-color: rgb(83, 83, 83);
+    height: 300px;
+    width: calc(100vw - 240px);
+    background-image: linear-gradient(rgba(0,0,0,.6) 0,#121212 100%),var(--background-noise);
+    --background-noise: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc1IiBzdGl0Y2hUaWxlcz0ic3RpdGNoIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGZpbHRlcj0idXJsKCNhKSIgb3BhY2l0eT0iLjA1IiBkPSJNMCAwaDMwMHYzMDBIMHoiLz48L3N2Zz4=");
+    pointer-events: none;
+}
+ */
+.header{
+    position: absolute;
+    width: calc(100vw - 240px);
+    z-index: 2;
+    .headerContainer{
+        padding: 16px 17px 16px 32px;
+        display: flex;
+        align-items: center;
+        height: 64px;
+        .strollContainer{
+            display: flex;
+            align-items: center;
+
+            .backBtn{
+                width: 32px;
+                height: 32px;
+                border: none;
+                border-radius: 16px;
+                background-color: #131313;
+                color: #ffff;
+                margin-right: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0.7;
+            }
+            .backBtn:hover{
+                opacity: 1;
+            }
+            .forwardBtn{
+                .backBtn();
+                opacity: 0.7;
+            }
+            .forwardBtn:hover{
+                opacity: 1;
+            }
+        }
+
+        .middleDiv{
+            display: flex;
+            position: relative;
+            flex: 1;
+
+            //HomeHeader.js kodları
+            .premiumDiv{
+                position: absolute;
+                top: -18px;
+                right: 0;
+
+            .premiumButton{
+                background-color: #0A0A0A;
+                color: #fff;
+                border: solid 1px #B1B1B1;
+                border-radius: 500px;
+                font-size: 12px;
+                font-weight: 700;
+                letter-spacing: 1.76px; //harfler arası boşluk
+                line-height: 18px;
+                font-family: spotify-circular,spotify-circular-cyrillic,spotify-circular-arabic,spotify-circular-hebrew,Helvetica Neue,helvetica,arial,Hiragino Kaku Gothic Pro,Meiryo,MS Gothic,sans-serif;
+                padding: 8px 34px;
+                float: right;
+            }
+            .premiumButton:hover{
+                transform: scale(1.06);
+                border-color: #fff;
+            }
+        }
+
+            //SearchHeader.js kodları
+            .searchContainer{
+                flex: 0 1 364px;
+                position: relative;
+                .searchInput{
+                    width: 100%;
+                    height: 40px;
+                    padding: 6px 48px;
+                    color: #000;
+                    font-size: 0.875rem;
+                    line-height: 1rem;
+                    font-family: spotify-circular, Helvetica, Arial, sans-serif;
+                    font-weight: 400;
+                    border: 0;
+                    border-radius: 500px;
+
+                }
+                .searchInput:focus{
+                    outline: none;
+                }
+                .searchIconAbsolute{
+                    position: absolute;
+                    left: 12px;
+                    top: 0;
+                    width: 100%;
+                    height: 40px;
+                    align-items: center;
+                    display: flex;
+                    pointer-events: none; // tıklanma özelliğini kaldırır. altındaki öğeye tıklayabilmeyi sağlar
+                }
+                .inputClearDiv{
+                    position: absolute;
+                    right: 24px;
+                    top: 0;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    pointer-events: visible;
+                    
+                }
+            }
+
+            // CollectionHeader.js kodları
+            .collectionHeaderContainer{
+                display: flex;
+                width: 100%;
+
+                .collectionHeaderUl{
+                    display: flex;
+                    list-style-type: none;
+                }
+                .collectionHeaderLi{
+                    display: flex;
+                    height: 42px;
+                    align-items: center;
+                }
+                .collectionHeaderNavLink{
+                    padding: 8px 16px;
+                    margin-right: 8px;
+                    text-decoration: none;
+                    height: 42px;
+                    border-radius: 4px;
+                    display: flex;
+                    align-items: center;
+                } 
+                .collectionHeaderNavLink span {
+                    font-size: 0.875rem;
+                    font-weight: 700;
+                    line-height: 1rem;
+                    font-family: spotify-circular, Helvetica, Arial, sans-serif;
+                    color: #fff;
+
+                }
+                .collectionHeaderNavLinkActive{
+                    background-color: #333333;
+
+                }
+            }
+        } 
+
+        //ActiveAccount.js kodları
+        .userAccountContainer{
+            margin-left: 32px;
+            position: relative;
+            
+           .userBorderButton{
+               background-color: #0A0A0A;
+               border-radius: 23px;
+               border: none;
+               display: flex;
+               align-items: center;
+               justify-content: space-evenly;
+                padding: 2px;
+               .userAvatar{
+                   width: 28px;
+                   height: 28px;
+                   border-radius: 14px;
+                
+               }
+               .userNameTxt{
+                   margin: 0 6px;
+                   color: #ffff;
+                   font-family: spotify-circular, Helvetica, Arial, sans-serif;
+                   font-size: 0.875rem;
+                   font-weight: 700;
+                   line-height: 2.1;
+               }
+               .arrowBottom{
+                margin-right: 6px;
+               }
+           }
+           .userBorderButton:hover{
+               background-color: #282828;
+           }
+
+           .accountMenu{
+               position: absolute;
+               right: 0;
+               top: 40px;
+                ul{
+                    list-style-type: none;
+                    padding: 4px;
+                    background-color: #282828;
+                    border-radius: 4px;
+                    max-width: 350px;
+                    min-width: 196px;
+                    li{
+                        
+                        .accountMenuOption{
+                            padding: 12px 8px 12px 12px;
+                            display: flex;
+                            justify-content: space-between;
+                            height: 40px;
+                            font-size: 0.875rem;
+                            font-family: spotify-circular, Helvetica, Arial, sans-serif;
+                            font-weight: 400;
+                            color: rgba(255,255,255,.9);
+                            
+                            span{
+                                display: flex;
+                                align-self: center;
+                                padding-left: 10px;
+                            }
+                        }
+                        :hover{
+                            background-color: #3E3E3E;
+                        }
+                    }
+                }
+           }
+        }
+    }
+}

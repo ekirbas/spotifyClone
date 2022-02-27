@@ -1,0 +1,118 @@
+.sidebar{
+    float: left;
+    background-color: #000000;
+    width: 240px;
+    height: calc(100vh - 90px);
+    //height: calc(~"100vh - " @90px); --değişkenle kullanımı
+    min-height: 530px;
+    padding-top: 24px;
+    overflow: hidden;
+
+    .spotifyRoute{
+        padding:0 24px ;
+        width: 140px;
+        height: 40px;
+    }
+
+    .menu li{
+        font-weight: 700;
+        font-size: 0.875rem;
+        padding: 0 8px;
+        font-family: spotify-circular,spotify-circular-cyrillic,spotify-circular-arabic,spotify-circular-hebrew,Helvetica Neue,helvetica,arial,Hiragino Kaku Gothic Pro,Meiryo,MS Gothic,sans-serif;
+
+        height: 40px;
+    }
+    .navLinks{
+        color: #B3B3B3;
+        text-decoration: unset;
+        align-items: center;
+        display: flex;
+        padding: 0 16px;
+        height: 40px;
+
+        span{
+            margin-right: 20px;
+        }
+    }
+    .navLinks:hover{
+        color: #fff;
+        svg path{
+        stroke: #fff;
+    }
+    }
+    .linkActive{
+        color: #fff;
+        svg path{
+            stroke: #fff;
+            fill:#fff
+
+        }
+    }
+    .sidebarButtons{
+        margin-top: 24px;
+    }
+    .cPlayListButton{
+        width: 240px;
+        padding: 8px 24px;
+        background-color: #000;
+        border: none;
+        align-items: center;
+        display: flex;
+        font-family: spotify-circular, Helvetica, Arial, sans-serif;
+        font-weight: 700;
+        font-size: 0.875rem;
+        .btnText{
+            color: #B3B3B3;
+        }
+        .cPlayListSvgBackground{
+            opacity: 0.7;
+            height: 24px;
+            width: 24px;
+            background-color: #FFFFFF;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            margin-right: 16px;
+        }
+    }
+    .cPlayListButton:hover{
+        span {
+            color: #FFFFFF;
+        }
+        .cPlayListSvgBackground{
+            opacity: 1;
+        }
+    }
+    .favSongsButton{
+        width: 240px;
+        padding: 8px 24px;
+        background-color: #000;
+        border: none;
+        align-items: center;
+        display: flex;
+        font-family: spotify-circular, Helvetica, Arial, sans-serif;
+        font-weight: 700;
+        font-size: 0.875rem;
+        .btnText{
+            color: #B3B3B3;
+        }
+        .favSongsSvgBackground{
+            opacity: 0.7;
+            height: 24px;
+            width: 24px;
+            background: linear-gradient(135deg,#450af5,#c4efd9);
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            margin-right: 16px;
+        }
+    }
+    .favSongsButton:hover{
+        span {
+            color: #FFFFFF;
+        }
+        .favSongsSvgBackground{
+            opacity: 1;
+        }
+    }
+}

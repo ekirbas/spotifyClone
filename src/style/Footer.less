@@ -1,0 +1,295 @@
+.footer{
+    background-color: #181818;
+    height: 90px;
+    padding: 0 16px;
+    //SelectedPodcast.js kodları
+    .selectedPodcastDiv{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+
+        .selectedPodcastImg{
+            width: 56px;
+            height: 56px;
+        }
+        .mediaPlayerPodcastNameDiv{
+            margin: 0 20px 0 14px;
+            :hover{
+                .Link{
+                    text-decoration: underline;
+                }
+            }
+            .podcastTxt{
+                font-family: spotify-circular, Helvetica, Arial, sans-serif;
+                font-size: 0.875rem;
+                line-height: 1rem;
+                color: #ffff;
+            }
+            .podcastArtistTxt{
+                font-family: spotify-circular, Helvetica, Arial, sans-serif;
+                font-size: 0.6875rem;
+                color: #ffff;
+                line-height: 1rem;
+                opacity: 0.6;
+                
+            }
+            .podcastArtistTxt:hover{
+                opacity: 1;
+            }
+        }
+        .mediaPlayerFavBtn{
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: none;
+            opacity: 0.6;
+            margin-top: 3px; 
+        }
+        .mediaPlayerFavBtn:hover{
+            opacity: 1;
+            path{
+                fill: #1DB954;
+                fill-rule: evenodd;
+            }
+        }
+        .mediaPlayerPopupBtn{
+            .mediaPlayerFavBtn()
+        }
+        .mediaPlayerPopupBtn:hover{
+            opacity: 1;
+         }
+    
+    }
+    .mediaPlayerDiv{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .mediaPlayerButtons{
+            display: flex;
+            gap: 8px;
+            margin-bottom: 8px;
+            button{
+                border: none;
+                width: 32px;
+                height: 32px;
+                background: none;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                opacity: 0.6;
+
+                svg{
+                    fill: #ffff;
+                }
+            }
+            button:hover{
+                opacity: 1;
+            }
+            .shuffleAfter{
+                    opacity: 1;
+                    position: relative;
+                    svg{
+                        fill: #1DB954;
+                    }
+            }
+            .shuffleAfter::after{
+                    content: "";
+                    width: 4px;
+                    height: 4px;
+                    border-radius: 2px;
+                    background-color: #1DB954;
+                    position: absolute;
+                    bottom: 0;
+                    left: 13px;
+                
+            }
+            .repeatActive{
+                opacity: 1;
+                    position: relative;
+                    svg{
+                        fill: #1DB954;
+                    }
+            }
+            .repeatActive::after{
+                content: "";
+                width: 4px;
+                height: 4px;
+                border-radius: 2px;
+                background-color: #1DB954;
+                position: absolute;
+                bottom: 0;
+                left: 13px;
+            
+        }
+            .playBtnBackground{
+                background-color: #ffff;
+                border-radius: 50%;
+                margin: 0 8px;
+                opacity: 1;
+                svg{
+                    fill: #000;
+                }
+            }
+            .playBtnBackground:hover{
+                transform: scale(1.1);
+                svg{
+                    transform: scale(1.1);
+                }
+            }
+        }
+        .playbackArea{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .playbackPosition{
+                width: 40px;
+                height: 16px;
+                font-size: 0.6075rem;
+                line-height: 1rem;
+                font-family: spotify-circular, Helvetica, Arial, sans-serif;
+                opacity: 0.6;
+                display: flex;
+                justify-content: flex-end;
+            }
+            .playbackBarContainer{
+                display: flex;
+                align-items: center;
+                position: relative;
+                margin: 0 8px;
+                height: 12px;
+
+                .playbackBarHoverBall{
+                    display: none;
+                width: 12px;
+                height: 12px;
+                border-radius: 6px;
+                background-color: #ffff;
+                position: absolute;
+                z-index: 5;
+                right: 89%;  //.playbackBarSlider ile aynı olacak. değişkene atanacak
+                }
+                .playbackBar{
+                position: relative;
+                height: 4px;
+                width: 100%;
+                background-color: #535353;
+                border-radius: 2px;
+                overflow-x: hidden;
+                .playbackBarSlider{
+                    width: 100%;
+                    height: 4px;
+                    border-radius: 4px;
+                    background-color: #B3B3B3;
+                    position: absolute;
+                    left: -89%;  //.playbackBarHoverBall ile aynı olacak. değişkene atanacak
+                }
+                }
+                
+            }
+            .playbackBarContainer:hover{
+                .playbackBarHoverBall{
+                    display: inherit;
+                }
+                .playbackBarSlider{
+                    background-color: #1db954;
+                }
+
+            }
+            .playbackDuration{
+                width: 40px;
+                height: 16px;
+                font-size: 0.6075rem;
+                line-height: 1rem;
+                opacity: 0.6;
+                font-family: spotify-circular, Helvetica, Arial, sans-serif;
+            }
+        }
+    }
+    .toolsDiv{
+        display: flex;
+        align-items: center;
+        .toolButtons{
+            display: flex;
+            justify-content: flex-end;
+            button{
+                border: none;
+                width: 32px;
+                height: 32px;
+                background: none;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                opacity: 0.6;
+
+                svg{
+                    fill: #ffff;
+                }
+            }
+            button:hover{
+                opacity: 1;
+            }
+            .volumeIconDiv{
+                height: 32px;
+                width: 125px;
+                display: flex;
+                align-items: center;
+                .volumeIconBtn:hover{
+                    //içinde olmayan className e erişmeye çalıştım olmadı
+                   /*  .volumeBarHoverBall{
+                        display: inherit;
+                    }
+                    .volumeBarSlider{
+                        background-color: #1db954;
+                    } */
+                }
+                .volumeBarContainer{
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    margin: 0 8px;
+                    height: 12px;
+                    .volumeBarHoverBall{
+                        display: none;
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 6px;
+                        background-color: #ffff;
+                        position: absolute;
+                        z-index: 5;
+                        right: 30%;  //.volumeBarSlider ile aynı olacak. değişkene atanacak
+                    }
+                    .volumeBar{
+                        position: relative;
+                        height: 4px;
+                        width: 100%;
+                        background-color: #535353;
+                        border-radius: 2px;
+                        overflow-x: hidden;
+                        .volumeBarSlider{
+                            width: 100%;
+                            height: 4px;
+                            border-radius: 4px;
+                            background-color: #B3B3B3;
+                            position: absolute;
+                            left: -30%;  //.volumeBarHoverBall ile aynı olacak. değişkene atanacak
+                        }
+                    }
+                }
+                .volumeBarContainer:hover{
+                    .volumeBarHoverBall{
+                        display: inherit;
+                    }
+                    .volumeBarSlider{
+                        background-color: #1db954;
+                    }
+    
+                }
+            }
+        }
+    }
+}
