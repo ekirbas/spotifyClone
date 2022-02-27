@@ -1,1 +1,1 @@
-#Readme2
+#This is example of a Spotify Clone
