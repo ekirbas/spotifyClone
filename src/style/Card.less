@@ -1,0 +1,245 @@
+.podcastCardContainerDiv{
+    margin: 24px 0 24px 0 ;
+    display: grid;
+    grid-gap: 24px;
+    position: relative;
+    .podcastCardTop{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 33px;
+        margin-bottom: 16px;
+        .podcastCardMessage{
+            font-size: 1.5rem;
+            letter-spacing: -0.04em;
+            font-family: spotify-circular, Helvetica, Arial, sans-serif;
+            font-weight: 700;
+        }
+        .seeAll{
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            font-family: var(--font-family,spotify-circular),Helvetica,Arial,sans-serif;
+            font-weight: 700;
+            color: #B3B3B3;
+        }
+    }
+    
+            //Search prevbtn
+            .prevDiv{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                left: -20px;
+                bottom: 86px;
+                .prevBtn{
+                    width: 48px;
+                    height: 48px;
+                    border: none;
+                    border-radius: 50%;
+                    background-color: #FFFFFF;
+                    z-index: 1;
+                    svg{
+                        margin: 3px 3px 0 0;
+                        polyline{
+                            margin-top: 5px;
+                            stroke: #000000;
+                            stroke-width: 2px;
+                        }
+                    }
+                }
+                .prevBtn:hover{
+                    background-color: #F6F6F6;
+                    transform: scale(1.1);
+                }
+            }
+            .nextDiv{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                right: -20px;
+                bottom: 86px;
+                .nextBtn{
+                    width: 48px;
+                    height: 48px;
+                    border: none;
+                    border-radius: 50%;
+                    background-color: #FFFFFF;
+                    z-index: 1;
+                    svg{
+                        margin: 3px 0 0 3px;
+                        polyline{
+                            margin-top: 5px;
+                            stroke: #000000;
+                            stroke-width: 2px;
+                        }
+                    }
+                }
+                .nextBtn:hover{
+                    background-color: #F6F6F6;
+                    transform: scale(1.1);
+                }
+            }
+            // ---
+    .podcastCardContainer{
+        display: grid;
+        grid-gap: 24px;
+        grid-template-columns: repeat(auto-fill,minmax(180px ,1fr));
+        //grid-template-columns: repeat(auto-fill,minmax(180px,1fr));
+        grid-auto-rows: 0;
+        grid-template-rows: 1fr;
+        overflow-y: hidden;
+        overflow-x: hidden ;
+
+        .podcastCardArea{
+            height: 100%;
+            background-color: #181818;
+            padding: 16px;
+            border-radius: 7px;
+            position: relative;
+            .podcastCardClickBtn{
+                position: absolute;
+                left: 0;
+                top: 0;
+                cursor: pointer;
+            }
+            .podcastCardImg{
+                border-radius: 50%;
+                margin-bottom: 16px;
+                box-shadow: 0 8px 24px rgba(0,0,0,.5);
+            }
+            .cardPlay{
+                position: absolute;
+                right: 5px;
+                bottom: 10px;
+                width: 48px;
+                height: 48px;
+                margin-left: 8px;
+                z-index: 1;
+                visibility: hidden;
+                opacity: 0;
+                .cardPlayBtn{
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 50%;
+                    background-color: #1ED760;
+                    border: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    box-shadow: 0 8px 8px rgba(0,0,0,.3);
+                }
+                .cardPlayBtn:hover{
+                    transform: scale(1.08);
+                    transition-duration: 33ms;
+                }
+            }
+            .podcastCardBottomContainer{
+                min-height: 62px;
+            .podcastCardName{
+                text-decoration: none;
+                font-family: var(--font-family,spotify-circular),Helvetica,Arial,sans-serif;
+                font-size: 1rem;
+                font-weight: 700;
+                line-height: 1.5rem;
+                background-color: red;
+                position: relative;
+                .podcastCardNameDiv{
+                    padding-bottom: 4px;
+
+                }
+            }
+            .podcastCardExplanation{
+                font-size: 0.875rem;
+                font-family: var(--font-family,spotify-circular),Helvetica,Arial,sans-serif;
+                font-weight: 700;
+                color: #6a6a6a;
+            }
+            }
+        }
+        .podcastCardArea:hover{
+            background-color: #252525;
+            .cardPlay{
+                visibility: visible;
+                opacity: 1;
+                bottom: 20px;
+            }
+        }
+
+
+        
+    }
+}
+
+//Search podcastTypesContainerF function cod
+
+    .podcastTypesCardContainer{
+        display: grid;
+        grid-gap: 24px;
+        grid-template-columns: repeat(6,464px);
+        grid-auto-rows: 0;
+        grid-template-rows: 1fr;
+        height: 220px;
+       
+        .podcastCardArea{
+            width: 464px;
+            background-color: #8D67AB;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            h3{
+                padding: 16px;
+                font-size: 40px;
+                letter-spacing: -.04em;
+                line-height: 1.3em;
+                overflow-wrap: break-word;
+                font-family: var(--font-family,spotify-circular),Helvetica,Arial,sans-serif;
+                position: absolute;
+            }
+            .typesImg{
+                position: absolute;
+                transform: rotate(25deg) translate(18%,-2%);
+                right: 0;
+                bottom: 0;
+                height: 128px;
+                width: 128px;
+                
+            }
+        }
+    }
+
+//Search podcastTypesSmallContainerF function cod
+.podcastTypesSmallCardContainer{
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: repeat(auto-fill,minmax(180px ,1fr ));
+    grid-template-rows: repeat(auto-fill,minmax(180px ,1fr ));
+
+    grid-auto-rows: minmax(180px,1fr);
+   
+    .typesSmallCardArea{
+        background-color: #8D67AB;
+        border-radius: 8px;
+        position: relative;
+        overflow: hidden;
+        h3{
+            padding: 16px;
+            font-size: 24px;
+            letter-spacing: -.04em;
+            line-height: 1.3em;
+            overflow-wrap: break-word;
+            font-family: var(--font-family,spotify-circular),Helvetica,Arial,sans-serif;
+            position: absolute;
+        }
+        .typesImg{
+            position: absolute;
+            transform: rotate(25deg) translate(18%,-2%);
+            right: 0;
+            bottom: 0;
+            height: 100px;
+            width: 100px;
+            
+        }
+    }
+}

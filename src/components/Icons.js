@@ -185,6 +185,20 @@ const volumeIcon = () => {
         </svg>
     )
 }
+const cardPlayIcon = () => {
+    return (
+        <svg role="img" height="18" width="18" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 1.713a.7.7 0 011.05-.607l10.89 6.288a.7.7 0 010 1.212L4.05 14.894A.7.7 0 013 14.288V1.713z" />
+        </svg>
+    )
+}
+const cardPauseIcon = () => {
+    return (
+        <svg role="img" height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.7 3a.7.7 0 00-.7.7v16.6a.7.7 0 00.7.7h2.6a.7.7 0 00.7-.7V3.7a.7.7 0 00-.7-.7H5.7zm10 0a.7.7 0 00-.7.7v16.6a.7.7 0 00.7.7h2.6a.7.7 0 00.7-.7V3.7a.7.7 0 00-.7-.7h-2.6z" />
+        </svg>
+    )
+}
 const Icon = ({ name }) => {
     const icons = {
         home: HomeIcon,
@@ -211,7 +225,9 @@ const Icon = ({ name }) => {
         lyrics: lyricsIcon,
         addQueue: addQueueIcon,
         connectDevice: connectDeviceIcon,
-        volume: volumeIcon
+        volume: volumeIcon,
+        cardPlay: cardPlayIcon,
+        cardPause: cardPauseIcon,
     }
     const Component = icons[name]
     return <Component />

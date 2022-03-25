@@ -19,6 +19,7 @@
         display: flex;
         align-items: center;
         height: 64px;
+        background-color: #121212;
         .strollContainer{
             display: flex;
             align-items: center;
@@ -28,13 +29,16 @@
                 height: 32px;
                 border: none;
                 border-radius: 16px;
-                background-color: #131313;
+                background-color: #0C0C0D;
                 color: #ffff;
                 margin-right: 16px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 opacity: 0.7;
+                polyline{
+                    stroke-width: 1.4px;
+                }
             }
             .backBtn:hover{
                 opacity: 1;
@@ -107,6 +111,9 @@
                     align-items: center;
                     display: flex;
                     pointer-events: none; // tıklanma özelliğini kaldırır. altındaki öğeye tıklayabilmeyi sağlar
+                    svg{
+                        stroke: #000;
+                    }
                 }
                 .inputClearDiv{
                     position: absolute;
