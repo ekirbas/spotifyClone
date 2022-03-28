@@ -1,7 +1,9 @@
 .footer{
     background-color: #181818;
     height: 90px;
+    min-width: 890px;
     padding: 0 16px;
+    border-top: 1px solid #282828;
     //SelectedPodcast.js kodları
     .selectedPodcastDiv{
         display: flex;
@@ -161,8 +163,20 @@
                 position: relative;
                 margin: 0 8px;
                 height: 12px;
+                .rangeContainer{
+                    height: 36px;
+                    display: flex;
+                    .rangeBar{
+                        height: 4px;
+                        border-radius: 4px;
+                        align-self: center;
+                        .rangeHover{
+                            transition: none;
+                        }
+                    }
+                }
 
-                .playbackBarHoverBall{
+              /*   .playbackBarHoverBall{
                     display: none;
                 width: 12px;
                 height: 12px;
@@ -187,7 +201,7 @@
                     position: absolute;
                     left: -89%;  //.playbackBarHoverBall ile aynı olacak. değişkene atanacak
                 }
-                }
+                } */
                 
             }
             .playbackBarContainer:hover{
@@ -197,7 +211,21 @@
                 .playbackBarSlider{
                     background-color: #1db954;
                 }
-
+                .rangeHover{
+                    visibility: visible !important ;
+                    transition: none;
+                }
+            }
+            .rangeBall{
+                height: 12px;
+                width: 12px;
+                border-radius: 6px;
+                background-color: #FFF;
+                justify-content: center;
+                align-items: center;
+                outline: none;
+                display: flex;
+                visibility: hidden;
             }
             .playbackDuration{
                 width: 40px;
@@ -253,7 +281,22 @@
                     position: relative;
                     margin: 0 8px;
                     height: 12px;
-                    .volumeBarHoverBall{
+                    
+                    .rangeContainer{
+                        height: 36px;
+                        display: flex;
+                        .rangeBar{
+                            height: 4px;
+                            border-radius: 4px;
+                            align-self: center;
+                            .rangeHover{
+                                transition: none;
+                            }
+                        }
+                    }
+                    
+
+                    /* .volumeBarHoverBall{
                         display: none;
                         width: 12px;
                         height: 12px;
@@ -278,7 +321,7 @@
                             position: absolute;
                             left: -30%;  //.volumeBarHoverBall ile aynı olacak. değişkene atanacak
                         }
-                    }
+                    } */
                 }
                 .volumeBarContainer:hover{
                     .volumeBarHoverBall{
@@ -287,7 +330,20 @@
                     .volumeBarSlider{
                         background-color: #1db954;
                     }
-    
+                    .rangeHover{
+                        visibility: visible !important ;
+                    }
+                }
+                .rangeBall{
+                    height: 12px;
+                    width: 12px;
+                    border-radius: 6px;
+                    background-color: #FFF;
+                    justify-content: center;
+                    align-items: center;
+                    outline: none;
+                    display: flex;
+                    visibility: hidden;
                 }
             }
         }

@@ -19,43 +19,7 @@ const playlistData = [
     {
         name: "Pray Radio",
         href: 'pray'
-    },
-    {
-        name: "Yabancı Pop",
-        href: 'pop'
-    },
-    {
-        name: "Dinlenir",
-        href: 'dinlenir'
-    },
-    {
-        name: "Arkada Çalsın",
-        href: 'arkada'
-    },
-    {
-        name: "Yabancı Pop",
-        href: 'pop'
-    },
-    {
-        name: "Dinlenir",
-        href: 'dinlenir'
-    },
-    {
-        name: "Arkada Çalsın",
-        href: 'arkada'
-    },
-    {
-        name: "Yabancı Pop",
-        href: 'pop'
-    },
-    {
-        name: "Dinlenir",
-        href: 'dinlenir'
-    },
-    {
-        name: "Arkada Çalsın",
-        href: 'arkada'
-    },
+    }
 ]
 
 function PlaylistMenu() {

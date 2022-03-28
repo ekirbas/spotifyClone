@@ -15,17 +15,17 @@ const dataPodcast = [
     },
     {
         id: "2",
-        name: "Haftalık Keşif",
-        img: 'https://i.scdn.co/image/ab67706f00000002f65970cda419a22790b45f14',
+        name: "Mega Hit Mix",
+        img: 'https://i.scdn.co/image/ab67706f000000023a0ce8df9f957525f62c9443',
         isPlay: false,
         to: '/',
         explanation: "Sanatçı",
-        type: "artist"
+        type: "playList"
     },
     {
         id: "3",
-        name: "Daily Mix 3",
-        img: 'https://i.scdn.co/image/ab67706f00000002d1e5d472bdc16c4522f2c506',
+        name: "Billie Eilish",
+        img: 'https://i.scdn.co/image/ab6761610000f178d8b9980db67272cb4d2c3daf',
         isPlay: false,
         to: '/',
         explanation: "Sanatçı",
@@ -33,8 +33,8 @@ const dataPodcast = [
     },
     {
         id: "4",
-        name: "Dinlenir",
-        img: 'https://i.scdn.co/image/ab67706f00000002f65970cda419a22790b45f14',
+        name: "Shakira",
+        img: 'https://i.scdn.co/image/ab6761610000f178ded9d5f8bb8611aad61df058',
         isPlay: false,
         to: '/',
         explanation: "Sanatçı",
@@ -42,17 +42,26 @@ const dataPodcast = [
     },
     {
         id: "5",
-        name: "Sagopa Kajmer",
-        img: 'https://i.scdn.co/image/ab67706f00000002f65970cda419a22790b45f14',
+        name: "New Rock Hits",
+        img: 'https://i.scdn.co/image/ab67706c0000da844b5feba25da20f357751808b',
+        isPlay: false,
+        to: '/',
+        explanation: "Sanatçı",
+        type: "playList"
+    },
+    {
+        id: "6",
+        name: "Zara Larsson",
+        img: 'https://i.scdn.co/image/ab6761610000f178a63a2b0ceb57eb509d67c90f',
         isPlay: false,
         to: '/',
         explanation: "Sanatçı",
         type: "artist"
     },
     {
-        id: "6",
-        name: "Poster Girl",
-        img: 'https://i.scdn.co/image/ab67706f00000002f65970cda419a22790b45f14',
+        id: "7",
+        name: "Zara Larsson",
+        img: 'https://i.scdn.co/image/ab6761610000f178a63a2b0ceb57eb509d67c90f',
         isPlay: false,
         to: '/',
         explanation: "Sanatçı",

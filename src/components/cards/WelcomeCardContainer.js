@@ -5,7 +5,7 @@ const dataWelcome = [
     {
         id: "1",
         name: "Yabancı Pop",
-        img: 'https://i.scdn.co/image/ab67706f00000002f65970cda419a22790b45f14',
+        img: 'https://i.scdn.co/image/ab67706f00000002264798b2ae5833eff35d1fbb',
         isPlay: false,
         to: '/'
     },
@@ -19,28 +19,28 @@ const dataWelcome = [
     {
         id: "3",
         name: "Daily Mix 3",
-        img: 'https://i.scdn.co/image/ab67706f00000002f65970cda419a22790b45f14',
+        img: 'https://i.scdn.co/image/ab67706f000000024534650d2b3552c0b8ad531a',
         isPlay: false,
         to: '/'
     },
     {
         id: "4",
         name: "Dinlenir",
-        img: 'https://i.scdn.co/image/ab67706f00000002f65970cda419a22790b45f14',
+        img: 'https://mosaic.scdn.co/640/ab67616d00001e022751f15ff6c8174e540b6fb4ab67616d00001e0253a2e11c1bde700722fecd2eab67616d00001e0289a8fab8bf8cd2b77da1fd17ab67616d00001e02df9a35baaa98675256b35177',
         isPlay: false,
         to: '/'
     },
     {
         id: "5",
         name: "Sagopa Kajmer",
-        img: 'https://i.scdn.co/image/ab67706f00000002f65970cda419a22790b45f14',
+        img: 'https://thisis-images.scdn.co/37i9dQZF1DZ06evO0Z5EJ2-default.jpg',
         isPlay: false,
         to: '/'
     },
     {
         id: "6",
-        name: "Poster Girl",
-        img: 'https://i.scdn.co/image/ab67706f00000002f65970cda419a22790b45f14',
+        name: "Kiiara Radio",
+        img: 'https://seeded-session-images.scdn.co/v1/img/artist/4u5smJBskI6Adzv08PuiUP/tr',
         isPlay: false,
         to: '/'
     },

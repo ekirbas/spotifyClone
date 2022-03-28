@@ -2,6 +2,13 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Icon } from '../Icons'
 import '../../style/Footer.less'
+import { Range, getTrackBackground } from "react-range";
+
+const STEP = 0.1;
+const MIN = 0;
+const MAX = 100;
+
+
 
 const data = {
     artist: "Sagopa Kajmer",
@@ -11,10 +18,59 @@ const data = {
     podcastUrl: "/sagopaKajmer/galiba-original"
 }
 
+
+
+
 function SelectedPodcast() {
     const [shuffle, setShuffle] = useState(false);
     const [repeat, setRepeat] = useState(0);
+    const [rangeHover, setRangeHover] = useState(false);
 
+
+    function podcastRange() {
+        const STEP = 0.1;
+        const MIN = 0;
+        const MAX = 100;
+        const [values, setValues] = useState([50])
+
+        return (
+            <Range
+                values={values}
+                step={STEP}
+                min={MIN}
+                max={MAX}
+                onChange={(values) => setValues(values)}
+                renderTrack={({ props, children }) => (
+                    <div className='rangeContainer col-'
+                        onMouseDown={props.onMouseDown}
+                        onTouchStart={props.onTouchStart}
+                        style={props.style}
+                    >
+                        <div className='rangeBar rangeHover col-'
+                            ref={props.ref}
+                            style={{
+                                background: getTrackBackground({
+                                    values: values,
+                                    colors: ["#1db954", "#535353"],
+                                    min: MIN,
+                                    max: MAX
+                                }),
+                            }}
+                        >
+                            {children}
+                        </div>
+                    </div>
+                )}
+                renderThumb={({ props, isDragged }) => (
+                    <div className="rangeBall rangeHover"
+                        {...props}
+                        style={props.style}
+                    >
+                    </div>
+                )}
+            />
+        );
+    }
 
     return (
         <>
@@ -78,12 +134,15 @@ function SelectedPodcast() {
                     <div className='playbackPosition'>
                         02.41
                     </div>
-                    <div className='playbackBarContainer col-'>
-                        <div className='playbackBarHoverBall'></div>
+                    <div className='playbackBarContainer col-'
+                        onMouseOver={() => setRangeHover(!rangeHover)}
+                        onMouseLeave={() => { setRangeHover(!rangeHover) }}>
+                        {/*   <div className='playbackBarHoverBall'></div>
                         <div className='playbackBar col-'>
                             <div className='playbackBarSlider'>
                             </div>
-                        </div>
+                        </div> */}
+                        {podcastRange()}
                     </div>
                     <div className='playbackDuration'>
                         02.41
@@ -108,12 +167,15 @@ function SelectedPodcast() {
                         <button className='volumeIconBtn'>
                             <Icon name="volume" />
                         </button>
-                        <div className='volumeBarContainer col-'>
-                            <div className='volumeBarHoverBall'></div>
+                        <div className='volumeBarContainer col-'
+                            onMouseOver={() => setRangeHover(!rangeHover)}
+                            onMouseLeave={() => { setRangeHover(!rangeHover) }}>
+                            {/* <div className='volumeBarHoverBall'></div>
                             <div className='volumeBar col-'>
                                 <div className='volumeBarSlider'>
                                 </div>
-                            </div>
+                            </div> */}
+                            {podcastRange()}
                         </div>
                     </div>
                 </div>

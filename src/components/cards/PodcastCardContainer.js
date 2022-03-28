@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import PodcastCard from './PodcastCard'
 import PropTypes from 'prop-types'
 import ScrollContainer from 'react-indiana-drag-scroll'
@@ -19,12 +20,16 @@ function PodcastCardContainer(props) {
         return (
             <div className='podcastCardContainerDiv col-'>
                 <div className='podcastCardTop'>
-                    <div className='podcastCardMessage'>
-                        {title}
-                    </div>
-                    <div className='seeAll'>
-                        HEPSİNİ GÖR
-                    </div>
+                    <Link to='/' className='Link'>
+                        <div className='podcastCardMessage'>
+                            {title}
+                        </div>
+                    </Link>
+                    <Link to='/' className='Link'>
+                        <div className='seeAll'>
+                            HEPSİNİ GÖR
+                        </div>
+                    </Link>
                 </div>
                 <div className='podcastCardContainer'>
                     {data.map(v => {
@@ -49,9 +54,11 @@ function PodcastCardContainer(props) {
         return (
             <div className='podcastCardContainerDiv col-'>
                 <div className='podcastCardTop'>
-                    <div className='podcastCardMessage'>
-                        {title}
-                    </div>
+                    <Link to='/' className='Link'>
+                        <div className='podcastCardMessage'>
+                            {title}
+                        </div>
+                    </Link>
                     {/*  <div className='seeAll'>
                         HEPSİNİ GÖR
                     </div> */}
@@ -107,9 +114,11 @@ function PodcastCardContainer(props) {
         return (
             <div className='podcastCardContainerDiv col-'>
                 <div className='podcastCardTop'>
-                    <div className='podcastCardMessage'>
-                        {title}
-                    </div>
+                    <Link to='/' className='Link'>
+                        <div className='podcastCardMessage'>
+                            {title}
+                        </div>
+                    </Link>
                 </div>
                 <div className='podcastTypesSmallCardContainer'>
                     {
