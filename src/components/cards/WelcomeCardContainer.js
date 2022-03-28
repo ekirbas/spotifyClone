@@ -1,7 +1,8 @@
 import React from 'react'
 import WelcomeCard from './WelcomeCard'
+import { useSelector } from 'react-redux'
 
-const dataWelcome = [
+/* const dataWelcome = [
     {
         id: "1",
         name: "Yabancı Pop",
@@ -44,9 +45,10 @@ const dataWelcome = [
         isPlay: false,
         to: '/'
     },
-]
+] */
 
 function WelcomeCardContainer() {
+    const dataWelcome = useSelector(state => state.cardsData.dataWelcome)
     return (
         <div className='welcomeCardContainer col-'>
             <div className='welcomeMessage'>

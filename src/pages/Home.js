@@ -1,9 +1,10 @@
 import React from 'react';
 import '../style/Home.less';
+import { useSelector } from 'react-redux'
 import WelcomeCardContainer from '../components/cards/WelcomeCardContainer'
 import PodcastCardContainer from '../components/cards/PodcastCardContainer';
 
-const dataPodcast = [
+/* const dataPodcast = [
     {
         id: "1",
         name: "Ava Max",
@@ -67,9 +68,10 @@ const dataPodcast = [
         explanation: "Sanatçı",
         type: "artist"
     },
-]
+] */
 
 function Home() {
+    const dataPodcast = useSelector(state => state.cardsData.dataPodcast)
     return (
         <>
             <div className='home col-'>

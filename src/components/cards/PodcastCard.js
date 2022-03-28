@@ -3,9 +3,13 @@ import { Link } from 'react-router-dom'
 import { Icon } from '../Icons'
 import PropTypes from 'prop-types'
 import '../../style/Card.less'
+import { useDispatch } from 'react-redux'
+import { selectedPodcast } from '../../store/CardsDataSlice'
 
 function PodcastCard(props) {
     const { img, to, name, explanation, type, color } = props;
+    const dispatch = useDispatch();
+
     function playListFunction() {
         return (
             <div className='podcastCardArea col- row-12'>
@@ -13,7 +17,8 @@ function PodcastCard(props) {
                 <div className='flex relative'>
                     <img className='podcastCardImg col- row-12' style={{ borderRadius: "4px" }} src={img} />
                     <div className='cardPlay'>
-                        <button className='cardPlayBtn'>
+                        <button className='cardPlayBtn'
+                            onClick={() => dispatch(selectedPodcast(props))}>
                             <Icon name="cardPlay" />
                         </button>
                     </div>
@@ -38,7 +43,8 @@ function PodcastCard(props) {
                 <div className='flex relative'>
                     <img className='podcastCardImg col- row-12' src={img} />
                     <div className='cardPlay'>
-                        <button className='cardPlayBtn'>
+                        <button className='cardPlayBtn'
+                            onClick={() => dispatch(selectedPodcast(props))}>
                             <Icon name="cardPlay" />
                         </button>
                     </div>
