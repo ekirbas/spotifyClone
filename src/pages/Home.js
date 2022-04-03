@@ -77,6 +77,8 @@ function Home() {
             <div className='home col-'>
                 <WelcomeCardContainer />
                 <PodcastCardContainer data={dataPodcast} title={"En sevdiğin sanatçılar"} />
+                <PodcastCardContainer data={dataPodcast} title={"Moduna göre"} />
+
             </div>
 
         </>

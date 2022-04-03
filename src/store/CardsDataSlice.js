@@ -12,7 +12,8 @@ export const CardsDataSlice = createSlice({
                     isPlay: false,
                     to: '/',
                     explanation: "Sanatçı",
-                    type: "playList"
+                    type: "playList",
+                    mediaSrc: "https://dinlehome.files.wordpress.com/2020/03/alan-walker-ava-max-alone-pt.-ii-lyrics.mp3"
                 },
                 {
                     id: "2",
@@ -21,7 +22,8 @@ export const CardsDataSlice = createSlice({
                     isPlay: false,
                     to: '/',
                     explanation: "Sanatçı",
-                    type: "playList"
+                    type: "playList",
+                    mediaSrc: "https://dinlehome.files.wordpress.com/2020/12/taylor-swift-willow-official-music-video.mp3"
                 },
                 {
                     id: "3",
@@ -30,7 +32,8 @@ export const CardsDataSlice = createSlice({
                     isPlay: false,
                     to: '/',
                     explanation: "Sanatçı",
-                    type: "artist"
+                    type: "artist",
+                    mediaSrc: "https://dinlehome.files.wordpress.com/2021/07/mp3indirdur-billie-eilish-lovely.mp3"
                 },
                 {
                     id: "4",
@@ -39,7 +42,8 @@ export const CardsDataSlice = createSlice({
                     isPlay: false,
                     to: '/',
                     explanation: "Sanatçı",
-                    type: "artist"
+                    type: "artist",
+                    mediaSrc: "https://dinlehome.files.wordpress.com/2020/06/dua-lipa-break-my-heart.mp3"
                 },
                 {
                     id: "5",
@@ -48,7 +52,8 @@ export const CardsDataSlice = createSlice({
                     isPlay: false,
                     to: '/',
                     explanation: "Sanatçı",
-                    type: "playList"
+                    type: "playList",
+                    mediaSrc: "https://dinlehome.files.wordpress.com/2020/03/camila-cabello-my-oh-my.mp3"
                 },
                 {
                     id: "6",
@@ -57,7 +62,8 @@ export const CardsDataSlice = createSlice({
                     isPlay: false,
                     to: '/',
                     explanation: "Sanatçı",
-                    type: "artist"
+                    type: "artist",
+                    mediaSrc: "https://dinlehome.files.wordpress.com/2020/03/nk-elefante.mp3"
                 },
                 {
                     id: "7",
@@ -66,7 +72,8 @@ export const CardsDataSlice = createSlice({
                     isPlay: false,
                     to: '/',
                     explanation: "Sanatçı",
-                    type: "artist"
+                    type: "artist",
+                    mediaSrc: "https://dinlehome.files.wordpress.com/2019/08/shawn-mendes-camila-cabello-sec3b1orita.mp3"
                 },
             ],
         dataWelcome: [
@@ -397,6 +404,74 @@ export const CardsDataSlice = createSlice({
                 color: "#1E3264"
             },
         ],
+        playlistData: [
+            {
+                id: "1",
+                name: "Yabancı Pop",
+                img: 'https://t.scdn.co/images/0a74d96e091a495bb09c0d83210910c3',
+                isPlay: false,
+                to: '/',
+                explanation: "Sanatçı",
+                type: "playListCollection",
+                color: "#8D67AB",
+                mediaSrc: "https://dinlehome.files.wordpress.com/2020/03/camila-cabello-my-oh-my.mp3"
+            },
+            {
+                id: "2",
+                name: "Dans ve Elektronik",
+                img: 'https://i.scdn.co/image/ab67706f000000020377baccf69ede3cf1a26eff',
+                isPlay: false,
+                to: '/',
+                explanation: "Sanatçı",
+                type: "playListCollection",
+                color: "#DC148C",
+                mediaSrc: "https://dinlehome.files.wordpress.com/2019/08/shawn-mendes-camila-cabello-sec3b1orita.mp3"
+            },
+            {
+                id: "3",
+                name: "Çılgın",
+                img: 'https://i.scdn.co/image/ab67706f000000029bb6af539d072de34548d15c',
+                isPlay: false,
+                to: '/',
+                explanation: "Sanatçı",
+                type: "playListCollection",
+                color: "#BA5D07",
+                mediaSrc: "https://dinlehome.files.wordpress.com/2020/03/camila-cabello-my-oh-my.mp3"
+            },
+            {
+                id: "4",
+                name: "Rock",
+                img: 'https://i.scdn.co/image/ab67706f00000002fe6d8d1019d5b302213e3730',
+                isPlay: false,
+                to: '/',
+                explanation: "Sanatçı",
+                type: "playListCollection",
+                color: "#E61E32",
+                mediaSrc: "https://dinlehome.files.wordpress.com/2019/08/shawn-mendes-camila-cabello-sec3b1orita.mp3"
+            },
+            {
+                id: "5",
+                name: "Sago",
+                img: 'https://i.scdn.co/image/ab67706f00000002f65970cda419a22790b45f14',
+                isPlay: false,
+                to: '/',
+                explanation: "Sanatçı",
+                type: "playListCollection",
+                color: "#8D67AB",
+                mediaSrc: "https://dinlehome.files.wordpress.com/2020/06/dua-lipa-break-my-heart.mp3"
+            },
+            {
+                id: "6",
+                name: "Zara",
+                img: 'https://i.scdn.co/image/ab67706f00000002f65970cda419a22790b45f14',
+                isPlay: false,
+                to: '/',
+                explanation: "Sanatçı",
+                type: "playListCollection",
+                color: "#1E3264",
+                mediaSrc: "https://dinlehome.files.wordpress.com/2020/06/dua-lipa-break-my-heart.mp3"
+            },
+        ],
         mediaPlayerData: {
             id: "1",
             name: "Ava Max",
@@ -404,7 +479,8 @@ export const CardsDataSlice = createSlice({
             isPlay: false,
             to: '/',
             explanation: "Sanatçı",
-            type: "playList"
+            type: "playListCollection",
+            mediaSrc: "https://dinlehome.files.wordpress.com/2020/03/alan-walker-ava-max-alone-pt.-ii-lyrics.mp3"
         }
     },
     reducers: {

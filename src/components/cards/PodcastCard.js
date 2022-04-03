@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux'
 import { selectedPodcast } from '../../store/CardsDataSlice'
 
 function PodcastCard(props) {
-    const { img, to, name, explanation, type, color } = props;
+    const { img, to, name, explanation, type, color, mediaSrc } = props;
     const dispatch = useDispatch();
 
     function playListFunction() {
@@ -79,7 +79,6 @@ function PodcastCard(props) {
         )
     }
 
-
     switch (type) {
         case "playList":
             return playListFunction();
@@ -89,10 +88,11 @@ function PodcastCard(props) {
             return podcastTypesFunction();
         case "typeSmall":
             return podcastTypesSmallFunction();
+        case "playListCollection":
+            return playListFunction();
         default:
             console.log("default ", type)
     }
-
 }
 PodcastCard.propTypes = {
     img: PropTypes.string,

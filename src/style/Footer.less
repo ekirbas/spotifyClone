@@ -75,8 +75,8 @@
             margin-bottom: 8px;
             button{
                 border: none;
-                width: 32px;
-                height: 32px;
+                width: 34px;
+                height: 34px;
                 background: none;
                 display: flex;
                 flex-direction: column;
@@ -136,10 +136,10 @@
                     fill: #000;
                 }
             }
-            .playBtnBackground:hover{
-                transform: scale(1.1);
+            .playBtnBackground:active{
+                transform: scale(.9);
                 svg{
-                    transform: scale(1.1);
+                    transform: scale(.9);
                 }
             }
         }
@@ -172,6 +172,12 @@
                         align-self: center;
                         .rangeHover{
                             transition: none;
+                        }
+                        .rangeHover:hover{
+                            visibility: visible !important ;
+                        }
+                        .rangeVisibleTrue{
+                            visibility: visible !important ;
                         }
                     }
                 }
@@ -215,6 +221,7 @@
                     visibility: visible !important ;
                     transition: none;
                 }
+                
             }
             .rangeBall{
                 height: 12px;
@@ -291,6 +298,12 @@
                             align-self: center;
                             .rangeHover{
                                 transition: none;
+                            }
+                            .rangeHover:hover{
+                                visibility: visible !important ;
+                            }
+                            .rangeVisibleTrue{
+                                visibility: visible !important ;
                             }
                         }
                     }

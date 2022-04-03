@@ -1,28 +1,11 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import '../../style/PlaylistMenu.less';
 
 
-const playlistData = [
-    {
-        name: "Yabancı Pop",
-        href: 'pop'
-    },
-    {
-        name: "Dinlenir",
-        href: 'dinlenir'
-    },
-    {
-        name: "Arkada Çalsın",
-        href: 'arkada'
-    },
-    {
-        name: "Pray Radio",
-        href: 'pray'
-    }
-]
-
 function PlaylistMenu() {
+    const playlistData = useSelector(state => state.cardsData.playlistData)
     return (
         <div className='playlistMenu'>
             <hr className='playlistHr' />
@@ -31,7 +14,7 @@ function PlaylistMenu() {
                     {playlistData.map((v, index) => {
                         return (
                             <li key={index}>
-                                <NavLink exact to={`/playlist/${v.href}`} className="playlistNavLink" activeClassName='playlistLinkActive'>
+                                <NavLink exact to={`/playlist/${v.to}`} className="playlistNavLink" activeClassName='playlistLinkActive'>
                                     {v.name}
                                 </NavLink>
                             </li>

@@ -1,17 +1,16 @@
 import React from 'react';
-//import '../style/Home.less';
+import PodcastCardContainer from '../components/cards/PodcastCardContainer';
+import '../style/Collection.less';
+import { useSelector } from 'react-redux'
 
 
 function Collection() {
+    const playlistData = useSelector(state => state.cardsData.playlistData)
+
     return (
-        <>
-            <div>Collection sayfası</div>
-            <h1>Content</h1>
-            <h1>Content</h1>
-            <h1>Content</h1>
-            <h1>Content</h1>
-            <h1>Content</h1>
-        </>
+        <div className='collection'>
+            <PodcastCardContainer type='playListCollection' data={playlistData} title='Çalma listeleri' />
+        </div>
     );
 }
 

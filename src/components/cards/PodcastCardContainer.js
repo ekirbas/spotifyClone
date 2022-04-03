@@ -33,7 +33,6 @@ function PodcastCardContainer(props) {
                 </div>
                 <div className='podcastCardContainer'>
                     {data.map(v => {
-                        console.log("data", v.color)
                         return (
                             <PodcastCard
                                 img={v.img}
@@ -43,6 +42,36 @@ function PodcastCardContainer(props) {
                                 key={v.id}
                                 type={v.type}
                                 color={v.color}
+                                mediaSrc={v.mediaSrc}
+                            />
+                        )
+                    })}
+                </div>
+            </div>
+        )
+    }
+    function podcastCardPlaylistF() {
+        return (
+            <div className='podcastCardContainerDiv col-'>
+                <div className='podcastCardTop'>
+                    <Link to='/' className='Link'>
+                        <div className='podcastCardMessage'>
+                            {title}
+                        </div>
+                    </Link>
+                </div>
+                <div className='podcastCardContainer' style={{ gridGap: "24px", gridAutoRows: "inherit", }}>
+                    {data.map(v => {
+                        return (
+                            <PodcastCard
+                                img={v.img}
+                                name={v.name}
+                                explanation={v.explanation}
+                                to={v.to}
+                                key={v.id}
+                                type={v.type}
+                                color={v.color}
+                                mediaSrc={v.mediaSrc}
                             />
                         )
                     })}
@@ -145,6 +174,8 @@ function PodcastCardContainer(props) {
             return podcastTypsContainerF();
         case "typeSmall":
             return podcastTypsSmallContainerF();
+        case "playListCollection":
+            return podcastCardPlaylistF();
         default:
             return podcastContainerF();
     }

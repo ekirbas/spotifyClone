@@ -1,26 +1,43 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Icon } from '../Icons'
 import { Range, getTrackBackground } from "react-range";
-
+import { useSelector } from 'react-redux'
+import { useAudio } from 'react-use';
 
 function MediaPlayer() {
     const [shuffle, setShuffle] = useState(false);
     const [repeat, setRepeat] = useState(0);
-    const [rangeHover, setRangeHover] = useState(false);
+    const podcastAudioSrc = useSelector(state => state.cardsData.mediaPlayerData.mediaSrc)
+    const [audio, state, controls, ref] = useAudio({
+        src: podcastAudioSrc,
+        autoPlay: true,
+    })
+    console.log("çalıştı");
+
+    function podcastCurrentDuration() {
+        const minute = parseInt(state?.time / 60);
+        const second = parseInt(state?.time % 60)
+        return `${minute > 0 ? minute : `0${minute}`}:${second > 0 ? second : `0${second}`}`;
+    }
+    function podcastDuration() {
+        const minute = parseInt(state?.duration / 60);
+        const second = parseInt(state?.duration % 60)
+        return `${minute > 0 ? minute : `0${minute}`}:${second > 0 ? second : `0${second}`}`;
+    }
 
     function podcastRange() {
         const STEP = 0.1;
         const MIN = 0;
         const MAX = 100;
-        const [values, setValues] = useState([50])
+        /* const [values, setValues] = useState([0]) */
 
         return (
             <Range
-                values={values}
+                values={[state?.time]}
                 step={STEP}
                 min={MIN}
-                max={MAX}
-                onChange={(values) => setValues(values)}
+                max={state?.duration || 1}
+                onChange={(values) => controls.seek(values[0])}
                 renderTrack={({ props, children }) => (
                     <div className='rangeContainer col-'
                         onMouseDown={props.onMouseDown}
@@ -31,10 +48,10 @@ function MediaPlayer() {
                             ref={props.ref}
                             style={{
                                 background: getTrackBackground({
-                                    values: values,
+                                    values: [state?.time],
                                     colors: ["#1db954", "#535353"],
                                     min: MIN,
-                                    max: MAX
+                                    max: state?.duration || 1
                                 }),
                             }}
                         >
@@ -43,7 +60,7 @@ function MediaPlayer() {
                     </div>
                 )}
                 renderThumb={({ props, isDragged }) => (
-                    <div className="rangeBall rangeHover"
+                    <div className={`rangeBall rangeHover ${isDragged ? "rangeVisibleTrue" : ""}`}
                         {...props}
                         style={props.style}
                     >
@@ -52,9 +69,64 @@ function MediaPlayer() {
             />
         );
     }
+    function podcastVolumeRange() {
+        const STEP = 0.01;
+        const MIN = 0;
+        return (
+            <Range
+                values={[state?.volume]}
+                step={STEP}
+                min={MIN}
+                max={1}
+                onChange={(values) => controls.volume(values[0])}
+                renderTrack={({ props, children }) => (
+                    <div className='rangeContainer col-'
+                        onMouseDown={props.onMouseDown}
+                        onTouchStart={props.onTouchStart}
+                        style={props.style}
+                    >
+                        <div className='rangeBar rangeHover col-'
+                            ref={props.ref}
+                            style={{
+                                background: getTrackBackground({
+                                    values: [state?.volume],
+                                    colors: ["#1db954", "#535353"],
+                                    min: MIN,
+                                    max: 1
+                                }),
+                            }}
+                        >
+                            {children}
+                        </div>
+                    </div>
+                )}
+                renderThumb={({ props, isDragged }) => (
+                    <div className={`rangeBall rangeHover ${isDragged ? "rangeVisibleTrue" : ""}`}
+                        {...props}
+                        style={props.style}
+                    >
+                    </div>
+                )}
+            />
+        );
+    }
+    function volumeIcon() {
+        if (!state?.muted) {
+            if (state?.volume > .66) {
+                return <Icon name="volume3" />
+            } else if (state?.volume > .33) {
+                return <Icon name="volume2" />
+            } else {
+                return <Icon name="volume1" />
+            }
+        } else {
+            return <Icon name="volumeMute" />
+        }
+    }
 
     return (
         <>
+            {audio}
             <div className='mediaPlayerDiv col-p40 row-12'>
                 <div className='mediaPlayerButtons'>
                     <button onClick={() => setShuffle(!shuffle)} className={shuffle ? "shuffleAfter" : ""}>
@@ -63,8 +135,10 @@ function MediaPlayer() {
                     <button>
                         <Icon name="previous" />
                     </button>
-                    <button className='playBtnBackground'>
-                        <Icon name="play" />
+                    <button className='playBtnBackground' onClick={state.playing ? controls.pause : controls.play}>
+                        {
+                            state?.playing ? <Icon name="stop" /> : <Icon name="play" />
+                        }
 
                     </button>
                     <button>
@@ -85,17 +159,14 @@ function MediaPlayer() {
                 </div>
                 <div className='playbackArea col-'>
                     <div className='playbackPosition'>
-                        02.41
+                        {podcastCurrentDuration()}
                     </div>
-                    <div className='playbackBarContainer col-'
-                        onMouseOver={() => setRangeHover(!rangeHover)}
-                        onMouseLeave={() => { setRangeHover(!rangeHover) }}>
+                    <div className='playbackBarContainer col-'>
                         {podcastRange()}
                     </div>
                     <div className='playbackDuration'>
-                        02.41
+                        {podcastDuration()}
                     </div>
-
                 </div>
             </div>
             {/* Tools.js */}
@@ -112,12 +183,13 @@ function MediaPlayer() {
                     </button>
                     <div className='volumeIconDiv'>
                         <button className='volumeIconBtn'>
-                            <Icon name="volume" />
+                            {
+                                volumeIcon()
+                            }
+
                         </button>
-                        <div className='volumeBarContainer col-'
-                            onMouseOver={() => setRangeHover(!rangeHover)}
-                            onMouseLeave={() => { setRangeHover(!rangeHover) }}>
-                            {podcastRange()}
+                        <div className='volumeBarContainer col-'>
+                            {podcastVolumeRange()}
                         </div>
                     </div>
                 </div>
