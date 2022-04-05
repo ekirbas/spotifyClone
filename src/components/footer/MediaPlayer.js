@@ -9,7 +9,7 @@ function MediaPlayer() {
     const [repeat, setRepeat] = useState(0);
     const podcastAudioSrc = useSelector(state => state.cardsData.mediaPlayerData.mediaSrc)
     const [audio, state, controls, ref] = useAudio({
-        src: "https://server1.indiryuklemp3.org/mp3_files/510e2cb24613205f7a34038c24231a13.mp3",
+        src: podcastAudioSrc,
         autoPlay: true,
     })
     console.log("çalıştı");
