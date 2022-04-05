@@ -56,7 +56,7 @@ function WelcomeCardContainer() {
             </div>
             <div className='cardContainer'>
                 {dataWelcome.map(v => {
-                    return <WelcomeCard img={v.img} name={v.name} to={v.to} />
+                    return <WelcomeCard img={v.img} name={v.name} to={v.to} key={v.id} />
                 })}
             </div>
 
