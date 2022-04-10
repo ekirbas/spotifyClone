@@ -4,18 +4,15 @@ import spotifySvg from '../../images/logo.svg';
 import Menu from './Menu';
 import { Icon } from '../Icons';
 import PlaylistMenu from './PlaylistMenu';
-
+import { NavLink } from 'react-router-dom';
 
 function Sidebar() {
-
-    // console.log("icon", Icon)
-
     return (
         <div className='sidebar'>
             <div style={{ height: "65px" }}>
-                <a href='#' className='spotifyRoute'>
+                <NavLink to='/' className='spotifyRoute'>
                     <img src={spotifySvg} />
-                </a>
+                </NavLink>
             </div>
             <Menu />
             <div className='sidebarButtons'>
