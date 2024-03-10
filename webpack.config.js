@@ -57,6 +57,7 @@ module.exports = {
     ],
     mode: 'development',
     devServer: {
+        allowedHosts: 'all',
         static: path.resolve(__dirname, 'public'),
         compress: true,
         port: 8080,
