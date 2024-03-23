@@ -84,7 +84,7 @@ packages/babel-standalone/babel.min.js.map
 /.history
 
 /dts
-
+/public
 /test/runtime-integration/*/output.js
 /test/runtime-integration/*/absolute-output.js
 
